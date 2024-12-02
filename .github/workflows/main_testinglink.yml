@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - testinglink
+name: Build and deploy ASP.Net Core app to Azure Web App - LinkUpWebAppTest
 
 on:
   push:
@@ -21,11 +21,23 @@ jobs:
         with:
           dotnet-version: '9.x'
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
+      - name: Restore dependencies for all projects
+        run: |
+          dotnet restore LinkUp.API/LinkUp.API.csproj
+          dotnet restore LinkUp.Core/LinkUp.Core.csproj
+          dotnet restore LinkUp.Infrastructure/LinkUp.Infrastructure.csproj
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+      - name: Build all projects
+        run: |
+          dotnet build LinkUp.API/LinkUp.API.csproj --configuration Release
+          dotnet build LinkUp.Core/LinkUp.Core.csproj --configuration Release
+          dotnet build LinkUp.Infrastructure/LinkUp.Infrastructure.csproj --configuration Release
+
+      - name: Publish all projects
+        run: |
+          dotnet publish LinkUp.API/LinkUp.API.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp/LinkUp.API"
+          dotnet publish LinkUp.Core/LinkUp.Core.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp/LinkUp.Core"
+          dotnet publish LinkUp.Infrastructure/LinkUp.Infrastructure.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp/LinkUp.Infrastructure"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -37,7 +49,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write #This is required for requesting the JWT
@@ -47,19 +59,18 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0DCF50C236F34A8DA391A5BF656024F7 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_90E07F57170C456B92D372345860A013 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4FF6BAF3396149D3B9275A9B71537B8F }}
+          client-id: ${{ secrets.__clientidsecretname__ }}
+          tenant-id: ${{ secrets.__tenantidsecretname__ }}
+          subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'testinglink'
-          slot-name: 'Production'
+          app-name: 'LinkUpWebAppTest'
+          slot-name: 'production'
           package: .
-          
