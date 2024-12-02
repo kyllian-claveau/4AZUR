@@ -63,9 +63,9 @@ jobs:
       - name: Login to Azure using Managed Identity
         uses: azure/login@v2
         with:
-          login-with-az-cli: true
-          identity: ${{ secrets.AZURE_CLIENT_ID }}
-
+          auth-type: "managedIdentity"
+      
+      
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
