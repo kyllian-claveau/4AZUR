@@ -60,13 +60,11 @@ jobs:
         with:
           name: .net-app
 
-      - name: Login to Azure
+      - name: Azure Login using Managed Identity
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.__clientidsecretname__ }}
-          tenant-id: ${{ secrets.__tenantidsecretname__ }}
-          subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
-
+          identity: true # Use Managed Identity to authenticate
+          
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
