@@ -34,3 +34,4 @@ jobs:
           app-name: 'LinkUpWebAppTest'
           slot-name: 'production'
           package: .
+          
