@@ -67,6 +67,12 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9B2CD0276C06430BA1E206E489BB328D }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_9CAB5568E7FE4B66B54C3957DB07BFA4 }}
 
+      - name: Show Key Vault secrets (for debugging purposes)
+        run: |
+          echo "Client ID: ${{ secrets.AZUREAPPSERVICE_CLIENTID_09F0FD327EDF4D2698E7C5E1E644DEA2 }}"
+          echo "Tenant ID: ${{ secrets.AZUREAPPSERVICE_TENANTID_9B2CD0276C06430BA1E206E489BB328D }}"
+          echo "Subscription ID: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_9CAB5568E7FE4B66B54C3957DB07BFA4 }}"
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
