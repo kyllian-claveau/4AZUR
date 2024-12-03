@@ -3019,11 +3019,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\LinkUp.Core\\LinkUp.Core.csproj",
+      "projectUniqueName": "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.Core\\LinkUp.Core.csproj",
       "projectName": "LinkUp.Core",
-      "projectPath": "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\LinkUp.Core\\LinkUp.Core.csproj",
+      "projectPath": "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.Core\\LinkUp.Core.csproj",
       "packagesPath": "C:\\Users\\PC MSI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\LinkUp.Core\\obj\\",
+      "outputPath": "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC MSI\\AppData\\Roaming\\NuGet\\NuGet.Config"

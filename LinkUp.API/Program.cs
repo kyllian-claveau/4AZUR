@@ -20,6 +20,7 @@ public class Program
 
         // Services
         builder.Services.AddControllers();
+        builder.Services.AddControllersWithViews();
         builder.Services.AddEndpointsApiExplorer();
         
         // Swagger
@@ -109,6 +110,10 @@ public class Program
         app.UseAuthentication();
         app.UseAuthorization();
         app.MapControllers();
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
         app.Run();
     }

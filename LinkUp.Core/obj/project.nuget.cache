@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1ZTI3gftoY0=",
+  "dgSpecHash": "CkZ2Os6x5Kk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\LinkUp.Core\\LinkUp.Core.csproj",
+  "projectFilePath": "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.Core\\LinkUp.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC MSI\\.nuget\\packages\\azure.core\\1.36.0\\azure.core.1.36.0.nupkg.sha512",
     "C:\\Users\\PC MSI\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

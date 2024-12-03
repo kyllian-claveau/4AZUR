@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "txDybJ8Rc9g=",
+  "dgSpecHash": "sh6+uNWavb8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\Linkup.API\\LinkUp.API.csproj",
+  "projectFilePath": "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.API\\LinkUp.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC MSI\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
     "C:\\Users\\PC MSI\\.nuget\\packages\\azure.extensions.aspnetcore.configuration.secrets\\1.3.2\\azure.extensions.aspnetcore.configuration.secrets.1.3.2.nupkg.sha512",

@@ -5398,11 +5398,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\Linkup.API\\LinkUp.API.csproj",
+      "projectUniqueName": "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.API\\LinkUp.API.csproj",
       "projectName": "LinkUp.API",
-      "projectPath": "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\Linkup.API\\LinkUp.API.csproj",
+      "projectPath": "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.API\\LinkUp.API.csproj",
       "packagesPath": "C:\\Users\\PC MSI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\Linkup.API\\obj\\",
+      "outputPath": "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC MSI\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -5417,11 +5417,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\LinkUp.Core\\LinkUp.Core.csproj": {
-              "projectPath": "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\LinkUp.Core\\LinkUp.Core.csproj"
+            "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.Core\\LinkUp.Core.csproj": {
+              "projectPath": "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.Core\\LinkUp.Core.csproj"
             },
-            "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\LinkUp.Infrastructure\\LinkUp.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\PC MSI\\Visual Studio Code Project\\Azure-Project\\LinkUp.Infrastructure\\LinkUp.Infrastructure.csproj"
+            "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.Infrastructure\\LinkUp.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\PC MSI\\RiderProjects\\4AZUR\\LinkUp.Infrastructure\\LinkUp.Infrastructure.csproj"
             }
           }
         }
