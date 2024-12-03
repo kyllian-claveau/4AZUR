@@ -99,15 +99,11 @@ public class Program
 
         var app = builder.Build();
 
-        // Configure
-        if (app.Environment.IsDevelopment())
-        {
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "LinkUp API v1");
             });
-        }
 
         app.UseHttpsRedirection();
         app.UseAuthentication();
