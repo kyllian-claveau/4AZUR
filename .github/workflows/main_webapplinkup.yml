@@ -21,11 +21,23 @@ jobs:
         with:
           dotnet-version: '9.x'
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
+      - name: Restore dependencies for all projects
+        run: |
+          dotnet restore LinkUp.API/LinkUp.API.csproj
+          dotnet restore LinkUp.Core/LinkUp.Core.csproj
+          dotnet restore LinkUp.Infrastructure/LinkUp.Infrastructure.csproj
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+      - name: Build all projects
+        run: |
+          dotnet build LinkUp.API/LinkUp.API.csproj --configuration Release
+          dotnet build LinkUp.Core/LinkUp.Core.csproj --configuration Release
+          dotnet build LinkUp.Infrastructure/LinkUp.Infrastructure.csproj --configuration Release
+
+      - name: Publish all projects
+        run: |
+          dotnet publish LinkUp.API/LinkUp.API.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp/LinkUp.API"
+          dotnet publish LinkUp.Core/LinkUp.Core.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp/LinkUp.Core"
+          dotnet publish LinkUp.Infrastructure/LinkUp.Infrastructure.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp/LinkUp.Infrastructure"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
