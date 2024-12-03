@@ -26,24 +26,21 @@ jobs:
           dotnet restore LinkUp.API/LinkUp.API.csproj
           dotnet restore LinkUp.Core/LinkUp.Core.csproj
           dotnet restore LinkUp.Infrastructure/LinkUp.Infrastructure.csproj
-
       - name: Build all projects
         run: |
           dotnet build LinkUp.API/LinkUp.API.csproj --configuration Release
           dotnet build LinkUp.Core/LinkUp.Core.csproj --configuration Release
           dotnet build LinkUp.Infrastructure/LinkUp.Infrastructure.csproj --configuration Release
-
       - name: Publish all projects
         run: |
           dotnet publish LinkUp.API/LinkUp.API.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp/LinkUp.API"
           dotnet publish LinkUp.Core/LinkUp.Core.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp/LinkUp.Core"
           dotnet publish LinkUp.Infrastructure/LinkUp.Infrastructure.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp/LinkUp.Infrastructure"
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp  # C'est ici que sont stockés les fichiers publiés
+          path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
     runs-on: windows-latest
@@ -52,7 +49,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write  # Cette permission est requise pour demander le JWT
+      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -73,4 +70,4 @@ jobs:
         with:
           app-name: 'webapplinkup'
           slot-name: 'Production'
-          package: ${{env.DOTNET_ROOT}}/myapp/LinkUp.API  # Spécifie le chemin du répertoire publié correct
+          package: .
